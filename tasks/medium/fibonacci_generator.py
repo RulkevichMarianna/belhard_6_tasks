@@ -1,5 +1,5 @@
 """
-Написать генератор fibonacci, которая принимает номер значения num_count
+Написать генератор , которая принимает номер значения num_count
 из чисел Фибоначчи и выводит на экран результат до заданного значения.
 
 Номер значения нужно проверить
@@ -18,3 +18,14 @@ File «C:/Python/Python3/python_generator.py», line 29, in
 print(next(fib))
 StopIteration
 """
+
+
+def fibonacci(num_count: int) -> int:
+    if num_count < 1:
+        raise ValueError('Введите значение больше 1')
+    else:
+        first = 1
+        second = 1
+        while first <= num_count:
+            yield first
+            first, second = second, first + second
